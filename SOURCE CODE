@@ -1,0 +1,21 @@
+char data = 0;
+byte relay_pin1 = 8 ;
+byte relay_pin2 = 9 ;
+ 
+ void setup()
+ { Serial.begin(9600); 
+  pinMode(relay_pin1,OUTPUT);
+pinMode(relay_pin2,OUTPUT);
+ } 
+void loop()
+ { if(Serial.available() > 0) 
+ { data = Serial.read(); 
+ Serial.print(data);  
+Serial.print("\n"); 
+if(data == '1')  digitalWrite(8, HIGH);  
+else if(data == '0')
+  digitalWrite(8, LOW); 
+   else if(data == '2')
+  digitalWrite(9, HIGH); 
+  else (data == '3')
+  digitalWrite(9, LOW);   } }
